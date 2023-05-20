@@ -7,7 +7,7 @@ fn main() {
     let rows: u32 = args[1].trim().parse().expect("Please type a number");
     
     for number in 0..rows {
-        
+        +-
        print_row(rows, number)
     }
     
