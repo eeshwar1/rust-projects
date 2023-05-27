@@ -1,17 +1,16 @@
 use std::env;
-use std::process;
 
 fn main() {
     
     let args: Vec<String> = env::args().collect();
-   
-    if args.len() < 2 {
-        
-         println!("Please pass number of rows");
-         process::exit(1);
-    }
     
-    let rows: u32 = args[1].trim().parse().expect("Please type a number");
+    let mut rows: u32 = 10;
+    
+    if args.len() >= 2 {
+        
+        rows = args[1].trim().parse().expect("Please type a number");
+    
+    }
     
     for number in 0..rows {
     
