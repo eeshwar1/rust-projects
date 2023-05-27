@@ -8,8 +8,12 @@ fn main() {
     
     if args.len() >= 2 {
         
-        rows = args[1].trim().parse().expect("Please type a number");
-    
+        rows = match args[1].trim().parse() {
+            Ok(num) => num,
+            Err(_) =>  { println!("Invalid value '{}' for rows. Defaulting to 10 rows", args[1].trim());
+                10 },
+                
+        };
     }
     
     for number in 0..rows {
